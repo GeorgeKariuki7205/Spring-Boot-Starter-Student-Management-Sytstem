@@ -1,21 +1,15 @@
 package com.example.schoolManagement.Schools;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
-
+@AllArgsConstructor
 @RestController
 @RequestMapping(path = "api/school")
 public class SchoolController {
 
     private final SchoolService schoolService;
-
-    @Autowired
-    public SchoolController(SchoolService schoolService) {
-        this.schoolService = schoolService;
-    }
 
     @GetMapping
     public List<SchoolEntity> gettingAllSchools(){

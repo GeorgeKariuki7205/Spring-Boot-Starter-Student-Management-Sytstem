@@ -1,20 +1,16 @@
 package com.example.schoolManagement.Departments;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@AllArgsConstructor
 @RestController
 @RequestMapping(path = "api/departments")
 public class DepartmentController {
 
     private  final  DepartmentService departmentService;
-
-    @Autowired
-    public DepartmentController(DepartmentService departmentService) {
-        this.departmentService = departmentService;
-    }
 
     @GetMapping
     public List<DepartmentEntity> gettingAllDepartments(){
